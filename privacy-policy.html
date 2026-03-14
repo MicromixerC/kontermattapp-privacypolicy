@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutzerklärung – KonterMatt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-dark: #1a3a28;
+      --green-mid: #2d5c3f;
+      --green-light: #3d7a55;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --cream: #f5f0e8;
+      --text: #1c1c1c;
+      --text-muted: #5a5a5a;
+      --border: rgba(201,168,76,0.25);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--green-dark);
+      color: var(--cream);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(160deg, #0f2619 0%, var(--green-dark) 60%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '♠ ♥ ♦ ♣';
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      letter-spacing: 14px;
+      color: var(--gold);
+      opacity: 0.4;
+    }
+
+    .app-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--gold-light);
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      margin-top: 6px;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.75;
+    }
+
+    /* ── Language toggle ── */
+    .lang-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin: 28px auto 0;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      width: fit-content;
+      overflow: hidden;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--cream);
+      font-family: 'Source Serif 4', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 8px 22px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      opacity: 0.55;
+    }
+
+    .lang-btn.active {
+      background: var(--gold);
+      color: var(--green-dark);
+      opacity: 1;
+      font-weight: 600;
+    }
+
+    .lang-btn:not(.active):hover {
+      opacity: 0.85;
+      background: rgba(201,168,76,0.08);
+    }
+
+    /* ── Main content ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .lang-section { display: none; }
+    .lang-section.visible { display: block; }
+
+    /* ── Section structure ── */
+    .effective-date {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.7;
+      margin-bottom: 40px;
+    }
+
+    .intro {
+      font-size: 1.08rem;
+      color: var(--cream);
+      opacity: 0.9;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+      font-style: italic;
+    }
+
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .section p {
+      color: var(--cream);
+      opacity: 0.85;
+      font-size: 0.97rem;
+      margin-bottom: 10px;
+    }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 10px 0;
+    }
+
+    .section ul li {
+      color: var(--cream);
+      opacity: 0.82;
+      font-size: 0.95rem;
+      padding: 4px 0 4px 20px;
+      position: relative;
+    }
+
+    .section ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      opacity: 0.7;
+    }
+
+    .highlight-box {
+      background: rgba(201,168,76,0.07);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 4px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 0.93rem;
+      color: var(--cream);
+      opacity: 0.9;
+    }
+
+    .contact-block {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-top: 12px;
+    }
+
+    .contact-block p {
+      margin: 3px 0;
+      font-size: 0.93rem;
+    }
+
+    a {
+      color: var(--gold-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      transition: border-color 0.2s;
+    }
+
+    a:hover { border-bottom-color: var(--gold); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      opacity: 0.4;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 40px 18px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-name">KonterMatt</div>
+  <div class="subtitle">Datenschutzerklärung · Privacy Policy</div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('de')" id="btn-de">Deutsch</button>
+    <button class="lang-btn" onclick="setLang('en')" id="btn-en">English</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════ DEUTSCH ═══ -->
+  <div class="lang-section visible" id="section-de">
+
+    <p class="effective-date">Stand: März 2025</p>
+
+    <p class="intro">
+      KonterMatt ist ein Kartenspiel für iOS und Android. Der Schutz deiner Privatsphäre ist uns wichtig.
+      Diese Datenschutzerklärung erklärt, welche Daten die App erhebt, wie sie verwendet werden und welche Rechte du hast.
+    </p>
+
+    <div class="section">
+      <div class="section-title">1. Verantwortlicher</div>
+      <div class="contact-block">
+        <p><strong>Charles Simon</strong></p>
+        <p>Luxemburg</p>
+        <p>E-Mail: <a href="mailto:kontermatt.app@gmail.com">kontermatt.app@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">2. Welche Daten werden erhoben?</div>
+      <p>KonterMatt erhebt so wenige Daten wie möglich. Im Einzelnen:</p>
+
+      <p><strong>a) Anonyme Nutzer-ID (Firebase Authentication)</strong></p>
+      <p>Beim ersten Start der App wird automatisch eine zufällige, anonyme ID erstellt (via Firebase Anonymous Authentication). Diese ID ist nicht mit deinem Namen, deiner E-Mail-Adresse oder deinem Gerät verknüpft. Sie dient ausschließlich dazu, Mehrspielersitzungen technisch zu ermöglichen.</p>
+
+      <p><strong>b) Mehrspieler-Spieldaten (Firestore)</strong></p>
+      <p>Wenn du eine Mehrspielerpartie spielst, werden folgende Daten temporär in der Cloud gespeichert:</p>
+      <ul>
+        <li>Raumcode und Raumeinstellungen</li>
+        <li>Spielzüge und Kartendaten der laufenden Partie</li>
+        <li>Gewählter Anzeigename (kein Klarname erforderlich)</li>
+      </ul>
+      <p>Diese Daten werden nach Ende der Partie automatisch gelöscht und nicht dauerhaft gespeichert.</p>
+
+      <p><strong>c) Einzelspieler-Modus</strong></p>
+      <div class="highlight-box">
+        Im Einzelspieler-Modus werden keinerlei Daten an externe Server übertragen. Alle Spieleinstellungen (Geschwindigkeit, Tischfarbe, Botnamen usw.) werden ausschließlich lokal auf deinem Gerät gespeichert.
+      </div>
+
+      <p><strong>d) Fehlerberichte (optional)</strong></p>
+      <p>Wenn du manuell einen Fehlerbericht über die App einreichst, werden ein Screenshot des Spielzustands sowie eine kurze Beschreibung an Firebase Firestore übermittelt. Dies geschieht nur auf ausdrückliche Nutzeraktion hin.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">3. Zweck der Datenverarbeitung</div>
+      <ul>
+        <li>Technische Bereitstellung des Mehrspielermodus</li>
+        <li>Synchronisation von Spielzügen zwischen Spielern in Echtzeit</li>
+        <li>Bearbeitung freiwillig eingereichter Fehlerberichte</li>
+      </ul>
+      <p>Es findet kein Profiling, keine Werbung und kein Tracking statt.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">4. Weitergabe an Dritte</div>
+      <p>Deine Daten werden nicht an Dritte verkauft oder zu Werbezwecken weitergegeben. Die App verwendet folgende Drittanbieterdienste:</p>
+      <ul>
+        <li><strong>Firebase (Google LLC)</strong> – für anonyme Authentifizierung und Echtzeit-Datenbankfunktionen im Mehrspielermodus. Firebase unterliegt den Datenschutzbestimmungen von Google: <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">5. Speicherdauer</div>
+      <ul>
+        <li>Mehrspieler-Raumdaten: werden nach Spielende automatisch gelöscht</li>
+        <li>Lokale Einstellungen: bleiben auf deinem Gerät, bis die App deinstalliert wird</li>
+        <li>Fehlerberichte: werden nach Bearbeitung manuell gelöscht</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">6. Deine Rechte (DSGVO)</div>
+      <p>Da keine personenbezogenen Daten im klassischen Sinne erhoben werden (die anonyme Firebase-ID ist dir nicht zuordenbar), sind klassische DSGVO-Auskunftsrechte eingeschränkt anwendbar. Du kannst jedoch jederzeit:</p>
+      <ul>
+        <li>Die App deinstallieren – damit werden alle lokalen Daten gelöscht</li>
+        <li>Uns per E-Mail kontaktieren, wenn du Fragen zu gespeicherten Daten hast</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">7. Datensicherheit</div>
+      <p>Die Kommunikation mit Firebase erfolgt ausschließlich über HTTPS (TLS-Verschlüsselung). Die App verwendet keine eigene Kryptografie – die Datensicherheit wird vollständig durch Apples iOS- bzw. Googles Android-Betriebssystem sowie durch Firebase gewährleistet.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">8. Kinder</div>
+      <p>KonterMatt ist für alle Altersgruppen geeignet. Es werden keine Daten erhoben, die eine besondere Schutzpflicht gegenüber Minderjährigen begründen würden.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">9. Änderungen dieser Erklärung</div>
+      <p>Sollte sich die Datenverarbeitung wesentlich ändern, wird diese Seite aktualisiert und das Datum am Anfang angepasst.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">10. Kontakt</div>
+      <div class="contact-block">
+        <p>Bei Fragen zum Datenschutz:</p>
+        <p><a href="mailto:kontermatt.app@gmail.com">kontermatt.app@gmail.com</a></p>
+      </div>
+    </div>
+
+  </div><!-- /section-de -->
+
+
+  <!-- ═══════════════════════════════════════════ ENGLISH ═══ -->
+  <div class="lang-section" id="section-en">
+
+    <p class="effective-date">Last updated: March 2025</p>
+
+    <p class="intro">
+      KonterMatt is a card game for iOS and Android. Your privacy matters to us.
+      This Privacy Policy explains what data the app collects, how it is used, and what rights you have.
+    </p>
+
+    <div class="section">
+      <div class="section-title">1. Controller</div>
+      <div class="contact-block">
+        <p><strong>Charles Simon</strong></p>
+        <p>Luxembourg</p>
+        <p>Email: <a href="mailto:kontermatt.app@gmail.com">kontermatt.app@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">2. What data is collected?</div>
+      <p>KonterMatt collects as little data as possible. Specifically:</p>
+
+      <p><strong>a) Anonymous user ID (Firebase Authentication)</strong></p>
+      <p>When the app is launched for the first time, a random anonymous ID is automatically created via Firebase Anonymous Authentication. This ID is not linked to your name, email address, or device. It is used solely to enable multiplayer sessions technically.</p>
+
+      <p><strong>b) Multiplayer game data (Firestore)</strong></p>
+      <p>When you play a multiplayer game, the following data is temporarily stored in the cloud:</p>
+      <ul>
+        <li>Room code and room settings</li>
+        <li>Moves and card data for the ongoing game</li>
+        <li>Chosen display name (no real name required)</li>
+      </ul>
+      <p>This data is automatically deleted after the game ends and is not stored permanently.</p>
+
+      <p><strong>c) Single-player mode</strong></p>
+      <div class="highlight-box">
+        In single-player mode, no data is transmitted to external servers. All game settings (speed, table color, bot names, etc.) are stored exclusively on your device.
+      </div>
+
+      <p><strong>d) Bug reports (optional)</strong></p>
+      <p>If you manually submit a bug report through the app, a screenshot of the game state and a short description are sent to Firebase Firestore. This only happens upon explicit user action.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">3. Purpose of data processing</div>
+      <ul>
+        <li>Technical operation of the multiplayer mode</li>
+        <li>Real-time synchronization of game moves between players</li>
+        <li>Handling voluntarily submitted bug reports</li>
+      </ul>
+      <p>There is no profiling, advertising, or tracking of any kind.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">4. Sharing with third parties</div>
+      <p>Your data is never sold or shared with third parties for advertising purposes. The app uses the following third-party services:</p>
+      <ul>
+        <li><strong>Firebase (Google LLC)</strong> – for anonymous authentication and real-time database functionality in multiplayer mode. Firebase is subject to Google's privacy policy: <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">5. Data retention</div>
+      <ul>
+        <li>Multiplayer room data: automatically deleted after the game ends</li>
+        <li>Local settings: stored on your device until the app is uninstalled</li>
+        <li>Bug reports: manually deleted after processing</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">6. Your rights (GDPR)</div>
+      <p>Since no personally identifiable data is collected in the traditional sense (the anonymous Firebase ID cannot be attributed to you), classical GDPR rights have limited applicability. However, you can at any time:</p>
+      <ul>
+        <li>Uninstall the app – this deletes all local data</li>
+        <li>Contact us by email if you have questions about stored data</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">7. Data security</div>
+      <p>All communication with Firebase is exclusively over HTTPS (TLS encryption). The app does not use any custom cryptography – data security is entirely handled by Apple's iOS or Google's Android operating system and by Firebase.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">8. Children</div>
+      <p>KonterMatt is suitable for all age groups. No data is collected that would create special protection obligations with respect to minors.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">9. Changes to this policy</div>
+      <p>If data processing changes significantly, this page will be updated and the date at the top will be adjusted accordingly.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">10. Contact</div>
+      <div class="contact-block">
+        <p>For privacy-related questions:</p>
+        <p><a href="mailto:kontermatt.app@gmail.com">kontermatt.app@gmail.com</a></p>
+      </div>
+    </div>
+
+  </div><!-- /section-en -->
+
+</main>
+
+<footer>
+  KonterMatt &nbsp;·&nbsp; ♠ ♥ ♦ ♣ &nbsp;·&nbsp; Luxembourg
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.getElementById('section-de').classList.toggle('visible', lang === 'de');
+    document.getElementById('section-en').classList.toggle('visible', lang === 'en');
+    document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+  }
+</script>
+
+</body>
+</html>
